@@ -1,62 +1,28 @@
-/* Script for Form validation
-   Will validate form and send Ajax request to php
-   Response in JSON and sweetalert for success and any errors
-*/
-// Wait for the DOM to be ready
-$(function() {
-  // Initialize form validation on the registration form.
-  // It has the name attribute "registration"
-  $("form[name='contact']").validate({
-    // Specify validation rules
-    rules: {
-      // The key name on the left side is the name attribute
-      // of an input field. Validation rules are defined
-      // on the right side
-      name: "required",
-      message: "required",
-      tel: {
-          required: "true",
-          digits: 'true',
-          minlength: 11
-      },
-      email: {
-        required: true,
-        // Specify that email should be validated
-        // by the built-in "email" rule
-        email: true
-      },
-      message: {
-        required: true,
-        minlength: 15
-      }
-    },
-    // Specify validation error messages
-    messages: {
-      email: "Please enter a valid email address"
-    },
-    // Make sure the form is submitted to the destination defined
-    // in the "action" attribute of the form when valid
-    submitHandler: function(form) {
+$(document).ready(function(){ 
+        $("[id^=send]").click(function(e) {
+        e.preventDefault(); // avoid to execute the actual submit of the form.
         var name=$('input#name').val();
         var email=$('input#email').val();
         var message=$('textarea#message').val();
         var tel=$('input#tel').val();
+        var whyfor = $( "#whyfor" ).val();
             $.ajax({
         type: "POST",
-        url: "scripts/php/mail.php",
+        url: "php/mail.php",
         data: { 
           name: name,
           email: email,
           message: message,
-          tel: tel
+          tel: tel,
+          whyfor: whyfor
         },
         beforeSend:function(){
         $.LoadingOverlay("show",{
             image       : "",
             background: "rgba(0, 0, 0, 0.8)",
-            fontawesome : "fa fa-bolt",
-            textColor: "#FF6700",
-            fontawesomeColor: "#FF6700",
+            fontawesome : "fa dumbbell",
+            textColor: "#4F887B",
+            fontawesomeColor: "#4F887B",
             text: "Sending",
             textAutoResize: "true",
             textResizeFactor: "0.5",
@@ -85,8 +51,7 @@ $(function() {
                 Swal.fire({
                     icon: 'info',
                     title: status,
-                    text: friendly,
-                    confirmButtonText: '<a href="https://kelectrix.co.uk/test">Ok</a>'
+                    text: friendly
                 })
                 // If our response is a success, clear the form
                 if (status == 'success'){
@@ -98,6 +63,5 @@ $(function() {
             alert('error');
         }
     });
-    }
+    });
   });
-});

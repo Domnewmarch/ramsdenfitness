@@ -3,8 +3,8 @@ if (isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message']))
     sleep(3);
     $messagevar=htmlspecialchars_decode($_POST['message']);
     $name = $_POST['name'];
-    $tel=$_POST['tel'];
     $whyfor = htmlspecialchars_decode($_POST['whyfor']);
+    $e=$_POST['email'];
     
     $htmlBody = <<< EOD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -108,7 +108,7 @@ if (isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message']))
 															<th class="column-top" width="145" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
 																<table width="100%" border="0" cellspacing="0" cellpadding="0">
 																	<tr>
-																		<td class="img m-center" style="font-size:0pt; line-height:0pt; text-align:left;"><img src="https://kelectrix.co.uk/test/images/logo.png" width="67" height="21" border="0" alt="" /></td>
+																		<td class="img m-center" style="font-size:0pt; line-height:0pt; text-align:left;">Ramsdon Fitness</td>
 																	</tr>
 																</table>
 															</th>
@@ -135,6 +135,7 @@ if (isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message']))
 													<table width="100%" border="0" cellspacing="0" cellpadding="0">
 														<tr>
 															<td class="h3 pb15" style="color:#000000; font-family:Arial, sans-serif; font-size:15px; line-height:32px; text-align:left; padding-bottom:15px;">New message from: $name</td>
+															<td class="h3 pb15" style="color:#000000; font-family:Arial, sans-serif; font-size:15px; line-height:32px; text-align:left; padding-bottom:15px;">EMail: $e</td>
 														</tr>
 														<tr>
 															<td class="h3 pb15" style="color:#000000; font-family:Arial, sans-serif; font-size:15px; line-height:32px; text-align:left; padding-bottom:15px;">Enquiring about: $whyfor</td>
@@ -146,10 +147,6 @@ if (isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message']))
 															<td class="text-link" style="color:#0000ee; font-family:Arial, sans-serif; font-size:16px; line-height:28px; text-align:left;"><a href="#" target="_blank" class="link-u" style="color:#0000ee; text-decoration:underline;"></td>
 														</tr>
 														<tr>
-															<td class="h3 pb15" style="color:#000000; font-family:Arial, sans-serif; font-size:15px; line-height:32px; text-align:left; padding-bottom:15px;">Contact number: 
-															<a href="tel:$tel"><i class="fas fa-phone-square" style="color:#FF6700"></i> $tel</a>
-															
-															</td>
 														</tr>
 													</table>
 												</td>
@@ -164,20 +161,10 @@ if (isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message']))
 														<tr>
 															<td align="center" style="padding-bottom: 30px;">
 																<table border="0" cellspacing="0" cellpadding="0">
-																	<tr>
-																		<td class="img" width="55" style="font-size:0pt; line-height:0pt; text-align:left;"><a href="#" target="_blank"><img src="images/t11_ico_facebook.jpg" width="15" height="15" border="0" alt="" /></a></td>
-																		<td class="img" width="55" style="font-size:0pt; line-height:0pt; text-align:left;"><a href="#" target="_blank"><img src="images/t11_ico_twitter.jpg" width="15" height="15" border="0" alt="" /></a></td>
-																		<td class="img" width="55" style="font-size:0pt; line-height:0pt; text-align:left;"><a href="#" target="_blank"><img src="images/t11_ico_instagram.jpg" width="15" height="15" border="0" alt="" /></a></td>
-																		<td class="img" width="15" style="font-size:0pt; line-height:0pt; text-align:left;"><a href="#" target="_blank"><img src="images/t11_ico_linkedin.jpg" width="15" height="15" border="0" alt="" /></a></td>
-																	</tr>
-																</table>
-															</td>
+															<td class="text-footer1 pb10" style="color:#777777; font-family:Arial, sans-serif; font-size:14px; line-height:20px; text-align:center; padding-bottom:10px;">Ramsden Fitness</td>
 														</tr>
 														<tr>
-															<td class="text-footer1 pb10" style="color:#777777; font-family:Arial, sans-serif; font-size:14px; line-height:20px; text-align:center; padding-bottom:10px;">Kelectrix</td>
-														</tr>
-														<tr>
-															<td class="text-footer2 pb20" style="color:#777777; font-family:Arial, sans-serif; font-size:12px; line-height:26px; text-align:center; padding-bottom:20px;">Kelectrix.co.uk</td>
+															<td class="text-footer2 pb20" style="color:#777777; font-family:Arial, sans-serif; font-size:12px; line-height:26px; text-align:center; padding-bottom:20px;">Ramsden Fitness</td>
 														</tr>
 														<tr>
 														</tr>
@@ -243,21 +230,21 @@ EOD;
     
     // Success script, form is legit
     header('Content-Type: application/json');
-        $x = "Your message about," . $whyfor . "has been sent we will be in touch as soon as possible";
+        $x = "Your message about," . $whyfor . " has been sent we will be in touch as soon as possible";
         $return_arr[] = array("status" => "Success",
                     "friendly" => $x);
         echo json_encode($return_arr);
         // Send the email
-        $email_to = 'contact@kelectrix.co.uk';
+        $email_to = 'domnewmarch1@gmail.com';
         $name = $_POST["name"];
-        $email_from = 'contact@kelectrix.co.uk';
+        $email_from = 'contact@ramsdenfitness.com';
         $message = $_POST["message"];
         $email_subject = $whyfor . " - From:" . $_POST['name'];
         $headers = "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-y8" . "\r\n";
         $headers .= "From: " . $email_from . "\n";
         $headers .= "Reply-To: " . $email_from . "\n";
-        $headers .= 'Bcc: david.m.brierley@gmail.com' . "\r\n";
+        $headers .= 'Bcc: domnewmarch1@gmail.com' . "\r\n";
         $message = "Name: ". $name . "\r\nMessage: " . $message;
         ini_set("sendmail_from", $email_from);
         $sent = mail($email_to, $email_subject, $htmlBody, $headers, "-f" .$email_from);
