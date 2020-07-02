@@ -354,6 +354,18 @@ ol {
 	padding-right: 60px;
 }
 
+
+.header-section .h3{
+	max-width: 6em;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	align-items: center;
+	color: #fff;
+}
+
+
+
 .header-section.header-normal {
 	position: relative;
 	display: -webkit-box;
@@ -365,6 +377,7 @@ ol {
 
 .header-section.header-normal .logo {
 	padding: 40px 0;
+	
 }
 
 .header-section.header-normal .nav-menu .mainmenu ul li a {
@@ -395,12 +408,13 @@ ol {
 	float: left;
 }
 
+
 .logo a {
 	display: inline-block;
 }
 
 .logo h3{
-	color: green;
+	color: #fff;
 }
 
 .nav-menu {
@@ -666,6 +680,28 @@ ol {
 
 .single-hero-item .hero-text {
 	text-align: center;
+	top: 0;
+}
+
+.main-text{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+}
+
+.main-text h1{
+	color: #ffffff;
+	font-size: 90px;
+	font-weight: 600;
+	text-transform: uppercase;
+	position: absolute;
+	top: -100pxpx;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	
+
 }
 
 .single-hero-item .hero-text h2 {
@@ -713,6 +749,19 @@ ol {
   .modal-open .modal {
 	overflow-x: hidden;
 	overflow-y: auto;
+  }
+
+  .before-after{
+	  display: flex;
+	  margin-bottom: 10px;
+  }
+
+  .grouptraining-modal{
+	  display: flex;
+	  max-width: 60%;
+	  justify-content: center;
+	  margin: auto;
+	  padding-bottom: 15px;
   }
   
   .modal {
@@ -1107,6 +1156,10 @@ height: auto;
 
 .section-title img{
 	padding-top: 20px;
+	border-radius: 55%;
+	max-width: 250px;
+	max-height: 250px;
+	margin-bottom: 0;
 }
 
 .services-page-text .section-title {
@@ -1216,6 +1269,22 @@ height: auto;
 
 .home-about {
 	background: #151515;
+	
+}
+
+.about-home{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.left-about {
+	max-width: 50%;
+}
+
+.right-about {
+	max-width: 50%;
+	padding-left: 10px;
 }
 
 .about-text {
@@ -1912,6 +1981,7 @@ height: auto;
 
 .cta-section .cta-text {
 	float: left;
+	padding: 6px;
 }
 
 .cta-section .cta-text h3 {
@@ -1926,13 +1996,14 @@ height: auto;
 	margin-bottom: 0;
 }
 
-.cta-section .primary-btn.cta-btn {
+.cta-section .primary-btn.cta-btn {	
 	float: right;
 	border-color: #ffffff;
 	background-image: -webkit-gradient(linear, left top, right top, color-stop(100%, #ffffff), to(#ffffff)), -webkit-gradient(linear, left top, right top, from(#ffffff), color-stop(0%, #ffffff));
 	background-image: -o-linear-gradient(left, #ffffff 100%, #ffffff 100%), -o-linear-gradient(left, #ffffff 0%, #ffffff 0%);
 	background-image: linear-gradient(to right, #ffffff 100%, #ffffff 100%), linear-gradient(to right, #ffffff 0%, #ffffff 0%);
 	margin-top: 14px;
+	
 }
 
 /*---------------------
@@ -2286,9 +2357,12 @@ height: auto;
 	padding-bottom: 80px;
 }
 
+
 .about-us img{
 
 max-width: 35rem;
+align-items: center;
+margin: auto;
 
 }
 
@@ -3605,6 +3679,32 @@ max-width: 35rem;
 	}
 	.map-contact-detalis {
 		right: 30px;
+	}
+
+	.about-home{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+	
+	.left-about {
+		max-width: 90%;
+	}
+	
+	.right-about {
+		display: none;
+	}
+
+	.social {
+		display: none;
+	}
+
+	.services-section .container{
+		max-width: 90%;
+		
+		
+		
 	}
 }
 
