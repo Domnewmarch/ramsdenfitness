@@ -63,6 +63,9 @@
         $('.header-section .nav-menu .mainmenu ul li').removeClass('active');
     });
 
+
+  
+
     /*------------------
         Carousel Slider
     --------------------*/
@@ -93,6 +96,8 @@
         autoHeight: false,
         autoplay: true,
     });
+
+    
 
     
 

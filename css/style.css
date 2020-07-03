@@ -337,21 +337,41 @@ ol {
 	}
 }
 
+
+
 /*---------------------
   Header
 -----------------------*/
+
+
+
 
 .header-section {
 	background-color: rgba(0, 0, 0, 0.5);
 	padding-top: 40px;
 	padding-bottom: 20px;
-	position: absolute;
+	position: relative;
 	left: 0;
 	top: 0;
 	width: 100%;
 	z-index: 99;
 	padding-left: 60px;
 	padding-right: 60px;
+	border-bottom: solid 15px #4f887b;
+}
+
+.nav-menu img{
+	max-height: 70px;
+}
+
+
+.test-image{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	align-items: center;
+	max-width: 500px;
+	padding-bottom: 20px;
 }
 
 
@@ -405,7 +425,8 @@ ol {
 }
 
 .logo {
-	float: left;
+	opacity: 0;
+	height: 200px;
 }
 
 
@@ -419,10 +440,13 @@ ol {
 
 .nav-menu {
 	text-align: center;
+	
+	
 }
 
 .nav-menu .mainmenu {
 	display: inline-block;
+	align-items: center;
 }
 
 .nav-menu .mainmenu ul li {
@@ -548,7 +572,15 @@ ol {
 	opacity: 1;
 }
 
+
+
+.hero-section{
+}
+
+
+
 .social{
+	padding-top: 5px;
 	right: -5rem;
 	position: absolute;
 	top: 40%;
@@ -590,15 +622,16 @@ ol {
 }
 
 .hero-items .owl-item.active .single-hero-item .hero-text h2 {
-	-webkit-transition: all 0.2s ease 0.2s;
-	-o-transition: all 0.2s ease 0.2s;
-	transition: all 0.2s ease 0.2s;
+	-webkit-transition: all 0.2s ease-in 0.8s;
+	-o-transition: all 0.2s ease-in 0.8s;
+	transition: all 0.2s ease-in 0.8s;
 }
 
 .hero-items .owl-item.active .single-hero-item .hero-text h1 {
 	-webkit-transition: all 0.4s ease 0.4s;
 	-o-transition: all 0.4s ease 0.4s;
-	transition: all 0.4s ease 0.4s;
+	transition: all 0.4s ease-in 0.6s;
+	
 }
 
 .hero-items .owl-item.active .single-hero-item .hero-text .primary-btn {
@@ -680,7 +713,6 @@ ol {
 
 .single-hero-item .hero-text {
 	text-align: center;
-	top: 0;
 }
 
 .main-text{
@@ -958,7 +990,12 @@ ol {
 
   /* Testemonials */
 
+  #more {
+	  display: none;
+  }
+
   .testimonial-2 {
+	  
 	border-radius: 7px;
 	background: #fff;
 	padding: 30px;
@@ -976,7 +1013,8 @@ ol {
 	  line-height: 1.3; }
 	  .testimonial-2 .author-name > span:nth-of-type(2) {
 		color: #ccc; }
-
+		
+	
 
 /* services 2 */
 
@@ -2164,6 +2202,8 @@ height: auto;
 .footer-section {
 	background: #151515;
 	padding-top: 72px;
+	border-top: 2px solid #4f887b;
+	margin-top: 5em;
 }
 
 .footer-logo-item {
@@ -3594,26 +3634,50 @@ margin: auto;
 		padding-left: 0;
 		padding-right: 0;
 	}
+
+	.grouptraining-modal img{
+		display: none;
+
+	}
+
+	.about-us img{
+
+		max-width: 20rem;
+		height: auto;
+		align-items: center;
+		margin: auto;
+		
+		}
+
+	.footer-logo-item {
+		display: none;
+	}
 	.nav-menu .mainmenu {
 		display: none;
+		
 	}
 	.top-social {
-		display: none;
 	}
 	.slicknav_menu {
-		display: block;
+		display: flex;
+		flex-direction: column;
 		background: transparent;
-		padding: 0;
+		padding: 0;	
+		
 	}
 	.slicknav_btn {
 		margin: 0;
 		border-radius: 0;
+		
 	}
 	.header-normal .slicknav_btn {
-		margin: 37px 0;
+		margin: 0;
+		left: -10;
 	}
+
+
 	.slicknav_nav {
-		background: #222;
+		background: #4f887b;
 	}
 	.slicknav_nav ul {
 		margin: 10px 15px;
@@ -3703,8 +3767,10 @@ margin: auto;
 	.services-section .container{
 		max-width: 90%;
 		
-		
-		
+	}
+
+	.site-section h2{
+		text-align: center;
 	}
 }
 
